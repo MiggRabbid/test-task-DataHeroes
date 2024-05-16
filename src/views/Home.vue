@@ -101,6 +101,7 @@ export default {
 
 <style>
 .rick-and-morty {
+  min-height: calc(100vh - 60px - 50px);
   background-color: #23282b;
 }
 
