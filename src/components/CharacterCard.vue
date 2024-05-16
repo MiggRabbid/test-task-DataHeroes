@@ -7,7 +7,7 @@
       <div class="character-card__section">
         <h2 class="character-card__section-title">{{ character.name }}</h2>
         <span class="character-card__status">
-          <span class="character-card__status-icon"></span>
+          <span :class="statusClass" class="character-card__status-icon"></span>
           {{ character.status }} - {{ character.species }}
         </span>
       </div>
@@ -47,6 +47,20 @@ export default {
       firstEpisode,
     };
   },
+  computed: {
+    statusClass() {
+      switch (this.character.status.toLowerCase()) {
+        case 'alive':
+          return 'character-card__status-icon--alive';
+        case 'dead':
+          return 'character-card__status-icon--dead';
+        case 'unknown':
+          return 'character-card__status-icon--unknown';
+        default:
+          return '';
+      }
+    },
+  },
 };
 </script>
 
@@ -65,22 +79,39 @@ export default {
   text-align: center;
   font-size: 18px;
   line-height: 26px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.character-card__img-wrapper {
+  width: 100%;
+  flex: 2 1 0%;
 }
 
 .character-card__img-wrapper > img {
-  width: 230px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  opacity: 1;
+  transition: opacity 0.5s ease 0s;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .character-card__content-wrapper {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 13px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-
-  padding: 13px;
+  justify-content: space-between;
+  align-items: start;
+  flex: 3 1 0%;
   text-align: left;
 }
+
 .character-card__section {
   display: flex;
   flex-direction: column;
@@ -97,16 +128,42 @@ export default {
   align-items: center;
   font-size: 16px;
 }
+
 .character-card__status-icon {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: green; /* Change color based on status */
+  background-color: green;
   margin-right: 5px;
+}
+
+.character-card__status-icon--alive {
+  background-color: green;
+}
+
+.character-card__status-icon--dead {
+  background-color: red;
+}
+
+.character-card__status-icon--unknown {
+  background-color: orange;
 }
 
 .character-card__text-gray {
   color: gray;
   font-size: 16px;
+}
+
+@media (max-width: 650px) {
+  .character-card {
+    height: initial;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .character-card__img-wrapper > img {
+    height: 300px;
+    margin: 0px;
+  }
 }
 </style>

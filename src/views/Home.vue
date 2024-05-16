@@ -1,6 +1,9 @@
 <template>
   <section class="rick-and-morty">
-    <h1 class="rick-and-morty__title">The Rick and Morty</h1>
+    <div class="rick-and-morty__title">
+      <h1>The Rick and Morty</h1>
+      <p>All characters</p>
+    </div>
     <div class="rick-and-morty__filters">
       <input
         v-model="filters.name"
@@ -97,13 +100,23 @@ export default {
 
 <style>
 .rick-and-morty {
-  background-color: #202329;
+  background-color: #23282b;
 }
 
 .rick-and-morty__title {
-  padding: 20px 0;
-  font-size: 80px;
+  padding: 30px 10px;
   font-weight: 900;
+  background: #fff;
+  line-height: 1.1;
+}
+
+.rick-and-morty__title > h1 {
+  font-size: 100px;
+}
+
+.rick-and-morty__title > p {
+  margin: 20px;
+  font-size: 40px;
 }
 
 .rick-and-morty__filters {
@@ -131,6 +144,53 @@ export default {
   justify-content: center;
 }
 .rick-and-morty__pagination {
-  padding: 20px 0 30px;
+  height: 35px;
+  padding: 20px 0 60px;
+}
+
+.rick-and-morty__pagination > * {
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+.rick-and-morty__pagination-button {
+  width: 120px;
+}
+
+.rick-and-morty__pagination-page {
+  color: #f5f5f5;
+}
+
+@media (max-width: 900px) {
+  .rick-and-morty__title {
+    padding: 15px 5px;
+  }
+
+  .rick-and-morty__title > h1 {
+    font-size: 70px;
+  }
+
+  .rick-and-morty__title > p {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .rick-and-morty__title {
+    padding: 15px 10px;
+  }
+
+  .rick-and-morty__title > h1 {
+    font-size: 55px;
+  }
+
+  .rick-and-morty__title > p {
+    margin-top: 10px;
+    font-size: 20px;
+  }
 }
 </style>

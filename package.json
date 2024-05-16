@@ -1,17 +1,20 @@
 {
   "name": "test-task-data-heroes",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "gh-pages -d dist",
-    "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "fix": "eslint --fix .",
     "format": "prettier --write src/"
   },
+  "keywords": [
+    "JavaScript",
+    "Vue.JS",
+    "Vite"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MiggRabbid/test-task-DataHeroes"
@@ -29,7 +32,6 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-vue": "^9.26.0",
-    "gh-pages": "^6.1.1",
     "prettier": "^3.2.5",
     "vite": "^5.2.8",
     "vite-plugin-vue": "^0.0.1"
