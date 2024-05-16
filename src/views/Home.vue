@@ -9,6 +9,7 @@
         v-model="filters.name"
         placeholder="Filter by name"
         class="rick-and-morty__filter-input"
+        @keydown.enter="applyFilters"
       />
       <select v-model="filters.status" class="rick-and-morty__filter-select">
         <option value="">All</option>
