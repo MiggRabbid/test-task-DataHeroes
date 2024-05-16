@@ -122,15 +122,15 @@ export default {
 }
 
 .rick-and-morty__filters {
-  height: 35px;
+  height: fit-content;
   margin: 20px 0 10px;
 }
 
 .rick-and-morty__filter-input,
 .rick-and-morty__filter-select,
 .rick-and-morty__filter-button {
-  height: 100%;
-  margin: 0 5px;
+  height: 35px;
+  margin: 5px 5px;
   border-radius: 5px;
   font-size: 18px;
 }
@@ -193,6 +193,10 @@ export default {
   .rick-and-morty__title > p {
     margin-top: 10px;
     font-size: 20px;
+  }
+
+  .rick-and-morty__filter-input {
+    width: 90%;
   }
 }
 </style>
