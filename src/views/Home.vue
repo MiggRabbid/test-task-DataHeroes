@@ -123,7 +123,7 @@ export default {
   gap: 15px;
   height: fit-content;
   margin-bottom: 10px;
-  padding-top: 20px;
+  padding-top: 35px;
 }
 
 .rick-and-morty__input-group,
@@ -162,6 +162,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .rick-and-morty__pagination {
   margin: 0 auto;
   height: 35px;

@@ -118,7 +118,6 @@ export default {
   .title__text {
     margin: auto 0 0 auto;
     padding-bottom: 10px;
-    width: 100%;
     font-size: 40px;
   }
 
@@ -127,6 +126,7 @@ export default {
     width: 300px;
     height: 250px;
     object-fit: cover;
+    object-position: center;
   }
 }
 </style>
