@@ -154,11 +154,25 @@ export default {
   font-size: 16px;
 }
 
+@media (max-width: 1241px) {
+  .character-card {
+    width: 450px;
+  }
+
+  .character-card__img-wrapper {
+    height: 220px;
+  }
+}
+
 @media (max-width: 650px) {
   .character-card {
     height: initial;
     width: 100%;
     flex-direction: column;
+  }
+
+  .character-card__img-wrapper {
+    height: 300px;
   }
 
   .character-card__img-wrapper > img {
